@@ -1,4 +1,4 @@
-package messenger.screens;
+package messenger.clients;
 
 import java.awt.Color;
 import java.awt.Component;

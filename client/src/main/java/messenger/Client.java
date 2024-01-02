@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-import messenger.screens.*;
+import messenger.clients.*;
 
 public class Client {
     private Socket socket; 
