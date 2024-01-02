@@ -1,4 +1,10 @@
-.vscode
+*.vscode
+
+# Maven build files
+*/target/*
+
+# Unused test files
+*/test/*
 
 # Compiled class file
 *.class

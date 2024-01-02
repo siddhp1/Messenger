@@ -1,9 +1,0 @@
-messenger\helpers\Buffer.class
-messenger\Client.class
-messenger\screens\MainClient$2.class
-messenger\screens\LoginClient.class
-messenger\screens\MainClient$1.class
-messenger\screens\SignUpClient.class
-messenger\screens\MainClient$ContactListRenderer.class
-messenger\screens\MainClient.class
-messenger\Client$1.class

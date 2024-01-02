@@ -1,4 +1,0 @@
-messenger\helpers\User.class
-messenger\helpers\LiveClientManager.class
-messenger\helpers\ServerThread.class
-messenger\Server.class
