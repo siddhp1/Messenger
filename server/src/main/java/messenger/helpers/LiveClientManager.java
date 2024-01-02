@@ -1,3 +1,5 @@
+package messenger.helpers;
+
 import java.util.ArrayList;
 
 public class LiveClientManager {

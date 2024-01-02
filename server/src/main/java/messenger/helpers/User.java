@@ -1,3 +1,5 @@
+package messenger.helpers;
+
 // Class that stores information about each user
 public class User {
     // Contains the username and the thread

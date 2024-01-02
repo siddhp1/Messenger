@@ -1,3 +1,5 @@
+package messenger.helpers;
+
 import java.util.ArrayList;
 
 public class Buffer {
@@ -35,7 +37,7 @@ public class Buffer {
     public ArrayList<String> getMessagesFromBuffer(String sender)
     {
         // Searches for the arraylist of messages from the sender
-        for (int i = 0; i < buffer.size(); i++)
+        for (int i = 0; i < buffer.size(); i++) 
         {
             if (sender.equals(buffer.get(i).get(0)))
             {
