@@ -8,6 +8,20 @@
             "type": "java",
             "name": "Client",
             "request": "launch",
+            "mainClass": "messenger.Client",
+            "projectName": "client"
+        },
+        {
+            "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "messenger.Server",
+            "projectName": "server"
+        },
+        {
+            "type": "java",
+            "name": "Client",
+            "request": "launch",
             "mainClass": "Client",
             "projectName": "messenger_69a4ff2f"
         },

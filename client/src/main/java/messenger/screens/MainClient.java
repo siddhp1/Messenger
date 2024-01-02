@@ -1,3 +1,5 @@
+package messenger.screens;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -37,7 +39,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.Border;
 
-class MainClient extends JFrame implements ActionListener, FocusListener, KeyListener
+import messenger.helpers.*;
+
+public class MainClient extends JFrame implements ActionListener, FocusListener, KeyListener
 {
     // UI Elements
     JFrame frame;
@@ -81,6 +85,8 @@ class MainClient extends JFrame implements ActionListener, FocusListener, KeyLis
 
         // Send request to get information added to the live client manager
         liveClientRequest();
+
+        final String name = username;
         
         // GUI
         messageBox = new JTextArea();
@@ -165,12 +171,11 @@ class MainClient extends JFrame implements ActionListener, FocusListener, KeyLis
         addWindowListener(new java.awt.event.WindowAdapter()
         {
             // Listens if the window is closed
-            
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) 
             {
                 // Sends a command to the server thread to remove the client from the client manager
-                output.println("<<<KILLCLIENT>>>" + username);
+                output.println("<<<KILLCLIENT>>>" + name);
                 System.exit(0); // Closes the window
             }
         }

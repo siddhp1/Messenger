@@ -1,3 +1,5 @@
+package messenger;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -6,15 +8,16 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Server {
+import messenger.helpers.*;;
 
+public class Server {
     // Constructor 
     public Server(int idCounter, ServerSocket serversocket, ArrayList<ServerThread> threadList)
     {
         // Lists for credentials   
         ArrayList<String> firstNameList = new ArrayList<>();
         ArrayList<String> lastNameList = new ArrayList<>();
-        ArrayList<String> emaiList = new ArrayList<>();
+        ArrayList<String> emailList = new ArrayList<>();
         ArrayList<String> usernameList = new ArrayList<>();
         ArrayList<String> passwordList = new ArrayList<>();
 
@@ -28,7 +31,7 @@ public class Server {
                 String[] tokens = data.split(",");
                 firstNameList.add(tokens[0]);
                 lastNameList.add(tokens[1]);
-                emaiList.add(tokens[2]);
+                emailList.add(tokens[2]);
                 usernameList.add(tokens[3]);
                 passwordList.add(tokens[4]);
             }
@@ -40,7 +43,7 @@ public class Server {
         }
 
         // Passes the lists through a merge sorting algorithm
-        sortLists(usernameList, passwordList, emaiList, firstNameList, lastNameList, 0, usernameList.size() - 1);
+        sortLists(usernameList, passwordList, emailList, firstNameList, lastNameList, 0, usernameList.size() - 1);
 
         // Create a live client manager
         LiveClientManager liveClientManager = new LiveClientManager(); 
@@ -50,7 +53,7 @@ public class Server {
             while(true) {
                 Socket socket = serversocket.accept();
                 // Creates a new serverthread class for each client that connects
-                ServerThread serverThread = new ServerThread(socket, threadList, idCounter, usernameList, passwordList, emaiList, firstNameList, lastNameList, liveClientManager);
+                ServerThread serverThread = new ServerThread(socket, threadList, idCounter, usernameList, passwordList, emailList, firstNameList, lastNameList, liveClientManager);
                 threadList.add(serverThread); 
                 serverThread.start();
                 idCounter++; // ID counter gets incremented to give each server thread and client pairing a unique id
@@ -61,7 +64,7 @@ public class Server {
     }
 
     // Merge sort algorithm for sorting credential lists
-    public void sortLists (ArrayList<String> usernameList, ArrayList<String>passwordList, ArrayList<String>emaiList, ArrayList<String>firstNameList, ArrayList<String>lastNameList, int start, int end)
+    public void sortLists (ArrayList<String> usernameList, ArrayList<String>passwordList, ArrayList<String>emailList, ArrayList<String>firstNameList, ArrayList<String>lastNameList, int start, int end)
     {
         int pivotIndex = start + (end - start) / 2; 
         String pivot = usernameList.get(pivotIndex);
@@ -78,22 +81,22 @@ public class Server {
             }
       
             if (i <= j) {
-              swap(usernameList, passwordList, emaiList, firstNameList, lastNameList, i, j);
+              swap(usernameList, passwordList, emailList, firstNameList, lastNameList, i, j);
               i++;
               j--;
             }
         }
       
           if (start < j) {
-                sortLists(usernameList, passwordList, emaiList, firstNameList, lastNameList, start, j);
+                sortLists(usernameList, passwordList, emailList, firstNameList, lastNameList, start, j);
           }
           if (i < end) {
-            sortLists(usernameList, passwordList, emaiList, firstNameList, lastNameList, i, end);
+            sortLists(usernameList, passwordList, emailList, firstNameList, lastNameList, i, end);
           }
     }
 
     // Sorting algorithm calls swap
-    private void swap(ArrayList<String> usernameList, ArrayList<String>passwordList, ArrayList<String>emaiList, ArrayList<String>firstNameList, ArrayList<String>lastNameList, int i, int j)
+    private void swap(ArrayList<String> usernameList, ArrayList<String>passwordList, ArrayList<String>emailList, ArrayList<String>firstNameList, ArrayList<String>lastNameList, int i, int j)
     {
         String temp = usernameList.get(i);
         usernameList.set(i, usernameList.get(j));
@@ -103,9 +106,9 @@ public class Server {
         passwordList.set(i, passwordList.get(j));
         passwordList.set(j, temp);
 
-        temp = emaiList.get(i);
-        emaiList.set(i, emaiList.get(j));
-        emaiList.set(j, temp);
+        temp = emailList.get(i);
+        emailList.set(i, emailList.get(j));
+        emailList.set(j, temp);
 
         temp = firstNameList.get(i);
         firstNameList.set(i, firstNameList.get(j));
