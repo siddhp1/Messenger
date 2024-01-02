@@ -1,6 +1,7 @@
 package messenger;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
@@ -142,8 +143,21 @@ public class Client {
     // Main
     public static void main(String[] args) throws IOException 
     {
-        // Connects to the server socket and starts the client
-        Socket socket = new Socket("localhost", 5000); 
-        new Client(socket); 
+        // Reads the IP or localhost from the configuration file
+        String ipAddress;
+        try (BufferedReader br = new BufferedReader(new FileReader("config.txt"))) {
+            ipAddress = br.readLine(); // Reads the IP or localhost from the file
+        } catch (IOException e) {
+            System.err.println("Error reading the configuration file.");
+            return;
+        }
+
+        // Connects to the server socket using the IP or localhost from the configuration file
+        try {
+            Socket socket = new Socket(ipAddress, 5000);
+            new Client(socket);
+        } catch (IOException e) {
+            System.err.println("Error connecting to the server.");
+        }
     }   
 }
