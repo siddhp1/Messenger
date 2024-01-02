@@ -13,16 +13,19 @@ WAN messenger application that can be hosted on an external server. Users that i
 ### Server Setup
 
 1. **Clone Repository:** 
-   - Clone this repository to your server:
+   
+   Clone this repository to your server:
      ```bash
      git clone https://github.com/siddhp1/Messenger.git
      ```
 
 2. **Place Server Jar and Credentials File:**
-   - Place the `server-1.0.jar` file in the same directory as `credentials.txt`.
+   
+   Place the `server-1.0.jar` file in the same directory as `credentials.txt`.
 
 3. **Port Forwarding:**
-   - Set up port forwarding for port `5000` on your router to the server's local IP address.
+   
+   Set up port forwarding for port `5000` on your router to the server's local IP address.
      This allows external connections to reach the messenger server:
      ```
      External Port: 5000
@@ -31,28 +34,33 @@ WAN messenger application that can be hosted on an external server. Users that i
      ```
 
 4. **Start the Server:**
-   - Run the server using the following command:
+   
+   Run the server using the following command:
      ```bash
      java -jar server-1.0.jar
      ```
-   - Ensure the server is running and accessible externally.
+   Ensure the server is running and accessible externally.
 
 ### Client Setup
 
 1. **Clone Repository:** 
-   - Clone this repository to your client:
+   
+   Clone this repository to your client:
      ```bash
      git clone https://github.com/siddhp1/Messenger.git
      ```
 
 2. **Place Client Jar and Config File:**
-   - Place the `client-1.0.jar` file in the same directory as `config.txt`.
+   
+   Place the `client-1.0.jar` file in the same directory as `config.txt`.
 
 3. **Configure IP:**
-   - Set the IP address inside the config file to the public IPv4 address of the server. If the server is hosted on a local network (LAN) use the private IP address.
+   
+   Set the IP address inside the config file to the public IPv4 address of the server. If the server is hosted on a local network (LAN) use the private IP address.
 
 4. **Start the Client:**
-   - Run the client using the following command:
+   
+   Run the client using the following command:
      ```bash
      java -jar client-1.0.jar
      ```
