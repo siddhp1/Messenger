@@ -1,6 +1,6 @@
 # Messenger
 
-WAN messenger application that can be hosted on an external server. Users that install the client and connect with the server to direct message other users or participate in global chat. Built with Java and packaged with Maven for a high school (grade 11) computer science final project. 
+WAN messenger application that can be hosted on an external server. Users can install the client and connect with the server to direct message other users or participate in global chat. Built with Java and packaged with Maven for a high school (grade 11) computer science final project. 
 
 ## Table of Contents
 
