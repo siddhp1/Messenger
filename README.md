@@ -1,6 +1,6 @@
 # Messenger
 
-<p align="center"><img width="600" alt="Thumbnail Image of Messenger" src="https://raw.githubusercontent.com/siddhp1/Messenger/refs/heads/main/Messenger.png"></p>
+<p align="center"><img width="600" alt="Thumbnail Image of Messenger" src="./Messenger.png"></p>
 
 A desktop GUI app for WAN messaging with direct messages and global chat.
 
